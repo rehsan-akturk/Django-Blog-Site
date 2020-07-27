@@ -1,0 +1,62 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% if post %}
+
+{% for posts in post %}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-9">
+
+        <!-- Title -->
+        <h1 class="mt-4"><a href="{% url 'post:postdetail' posts.slug %} ">
+         {{posts.title}}</a>
+        </h1>
+
+       <!-- Date/Time -->
+        <p class="lead">
+         {{posts.created_on}}
+        </p>
+
+        
+
+       
+        
+
+    
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="{{posts.thumb.url}}" alt="">
+
+
+        <!-- Post Content -->
+        <p class="lead">
+        {{posts.content|safe|truncatewords:"50"|linebreaks}}
+        <a href=" {% url 'post:postdetail' posts.slug %} ">Devamını Oku</a>
+        
+        
+        </p>
+      
+
+        <hr>
+       </div>
+     </div>
+
+
+
+   
+
+  
+
+  </div>
+  <!-- /.container -->
+{% endfor %}
+{% endif %} 
+{% endblock content %}

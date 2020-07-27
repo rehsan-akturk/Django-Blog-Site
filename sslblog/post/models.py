@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.urls import reverse
+from ckeditor.fields import RichTextField
     
 
 
@@ -17,7 +18,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now= True)
-    content = models.TextField()
+    content = RichTextField(blank=True) #CKEditör
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     thumb=models.ImageField(default='default.png',blank=True)
@@ -51,4 +52,7 @@ class Comment(models.Model):
     class Meta:
         ordering = ["-comment_date"]
     
+
+    
+   
 

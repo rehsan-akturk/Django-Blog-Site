@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "bootstrap4",
     'crispy_forms',
     'post',
+    'ckeditor',
+   
     
 ]
 
@@ -131,7 +133,7 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR,'Templates')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

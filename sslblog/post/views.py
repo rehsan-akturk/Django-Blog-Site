@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect,HttpResponse,get_object_or_404,reverse
-from .models import Post,Comment
+from post.models import Post,Comment
 from django.views import generic
 from django.contrib.auth.models import User
-from .forms import CommentForm
+from post.forms import CommentForm
 
 
 
@@ -34,6 +34,7 @@ def postdetail(request,slug):
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
+            return redirect(f"/{slug}")
     else:
         comment_form = CommentForm()
 

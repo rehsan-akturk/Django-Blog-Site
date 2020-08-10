@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'contact',
    
+   
     
 ]
 
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+
               
                 
             ],
@@ -138,6 +140,11 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+#email for contact grid API
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST_USER="apikey"
+EMAIL_HOST='smtp.sendgrid.net'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_PASSWORD ='SG.oDN9basdaECvH5asdasw.gXVEgtD1asqSkn-EW'

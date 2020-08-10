@@ -1,13 +1,36 @@
 {% extends 'layout.html' %}
 
+{% load static %}
+ <link href="{%  static 'css/contact.css'  %}" rel="stylesheet">
+ {% load crispy_forms_tags %}
+
+
 {% block content %}
+<br>
+<br>
+	<div class="row">
+		  <div class="col-md-4 offset-md-3" >
+                    <span class="anchor" id="formContact"></span>
+                    <!-- form user info -->
+                    <div class="card card-outline-secondary" style="width: 40rem;height:46rem" >
+                        <div class="card-header">
+                            <h3 class="mb-2">İletişim</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off" method="post"   >
+                              {% csrf_token %}
+                              {{ form|crispy }}
+                                    <br>
+                                    <button type="submit" class="btn btn-success btn-lg float-right "   >Gönder</button>
+                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /form user info -->
+      	
+            </div>
 
-<h2>Contact Us</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
-
+<br>
 
 {% endblock content %}
+ 

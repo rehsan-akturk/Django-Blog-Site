@@ -17,7 +17,7 @@ def contact_us(request):
             sender_name = form.cleaned_data['name']
             sender_email = form.cleaned_data['email']
             message =form.cleaned_data['message']
-            send_mail(sender_name, message ,sender_email , ['akturkrehsan@gmail.com'])
+            send_mail(sender_name, message ,sender_email , ['xxx@gmail.com'])
             return HttpResponse('Mesajınız bize ulaştı!')
         return HttpResponseRedirect('/contact/thanks/')
            

@@ -55,7 +55,7 @@ class Post(models.Model):
         return self.title
     
     def get_cat_list(self):
-        k = self.category # for now ignore this instance method
+        k = self.category
         breadcrumb = ["dummy"]
         while k is not None:
             breadcrumb.append(k.slug)

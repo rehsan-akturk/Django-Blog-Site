@@ -1,7 +1,10 @@
 {% extends 'layout.html' %}
 
 
+
+
 {% block content %}
+
 
 <!-- Page Content -->
   <div class="container">
@@ -19,16 +22,13 @@
           {{post.created_on}}
         </p>
 
-  
-
-
         <!-- Preview Image -->
         <img class="img-fluid rounded" src="{{post.thumb.url}}" alt="">
 
         <hr>
-
+     
         <!-- Post Content -->
-        <p class="lead">{{post.content|safe}}</p>
+      <p class="lead">{{post.content|safe}}</p>
 
 <!-- Comments Form -->
     

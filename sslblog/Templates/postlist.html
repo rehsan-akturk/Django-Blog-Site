@@ -1,0 +1,50 @@
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+
+{% if  post_set.all %}
+{% for i in post_set.all %}
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-9">
+
+        <!-- Title -->
+        <h1 class="mt-4">
+         {{i.title}}
+        </h1>
+
+       <!-- Date/Time -->
+        <p class="lead">
+         {{i.created_on}}
+        </p>
+
+        <img class="img-fluid rounded" src="{{i.thumb.url}}" alt="">
+
+
+        <!-- Post Content -->
+        <p class="lead">
+        {{i.content|safe|truncatewords:"50"|linebreaks}}
+        <a href=" {% url 'post:postdetail' i.slug %} ">Devamını Oku</a>
+        
+        </p>
+
+        <hr>
+       </div>
+     </div>
+
+  </div>
+  <!-- /.container -->
+{% endfor %}
+{% endif %} 
+
+
+{% endblock content %}

@@ -31,29 +31,41 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto"  class="breadcrumbs" >
           <li class="nav-item active">
             <a class="nav-link" href="/">Home
+             {% for slug,name in breadcrumbs %}
+           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
+           {% endfor %}
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
             <div class="dropdown show">
-           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <a class="btn btn-secondary dropdown-toggle" href="/ssl/" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             SSL
            </a>
-
+          
+            
            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/ssl/">COMODO SSL</a>
-           <a class="dropdown-item" href="/sslrapid/">Rapid SSL</a>
-         
+            <a class="dropdown-item" href="/category/comodo-ssl/">COMODO SSL</a>
+            {% for slug,name in breadcrumbs %}
+           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
+           {% endfor %}
+           <a class="dropdown-item" href="/category/sslrapid/">Rapid SSL</a>
+           {% for slug,name in breadcrumbs %}
+           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
+           {% endfor %}
+           
           </div>
         </div>
-        <li class="nav-item">
-          <a class="nav-link" href="/antivirüs/">ANTİVİRÜS</a>
+      
+        <li class="nav-item">    
+          <a class="nav-link" href="/category/antivirüs/">ANTİVİRÜS</a>
+          {% for slug,name in breadcrumbs %}
+           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
+           {% endfor %}
         </li>
-
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact/">DESTEK</a>
           </li>
@@ -65,13 +77,9 @@
   <hr>
 {% block content %}
 <div class="container">
-
-
-
  </div>
 
 {% endblock content %}
-
 
   </div>
     <!-- Footer -->

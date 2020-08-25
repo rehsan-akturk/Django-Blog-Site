@@ -8,8 +8,6 @@ app_name = "post"
 urlpatterns = [
     path('', views.index, name='index'),
     path('ssl/', views.post, name='post'),
-    #path('category/comodo-ssl', views.show_category, name='category'),
-    #path('category/sslrapid/', views.show_category, name='category'),
     path('ssl/<path:hierarchy>/', views.show_category,name='category'),
     path('<slug:slug>/', views.postdetail,name='postdetail'),
     

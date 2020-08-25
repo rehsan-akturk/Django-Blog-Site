@@ -34,9 +34,7 @@
         <ul class="navbar-nav ml-auto"  class="breadcrumbs" >
           <li class="nav-item active">
             <a class="nav-link" href="/">Home
-             {% for slug,name in breadcrumbs %}
-           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
-           {% endfor %}
+            
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -48,23 +46,17 @@
           
             
            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/category/comodo-ssl/">COMODO SSL</a>
-            {% for slug,name in breadcrumbs %}
-           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
-           {% endfor %}
-           <a class="dropdown-item" href="/category/sslrapid/">Rapid SSL</a>
-           {% for slug,name in breadcrumbs %}
-           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
-           {% endfor %}
+            <a class="dropdown-item" href="/ssl/comodo-ssl/">COMODO SSL</a>
+           
+           <a class="dropdown-item" href="/ssl/sslrapid/">Rapid SSL</a>
+          
            
           </div>
         </div>
       
         <li class="nav-item">    
-          <a class="nav-link" href="/category/antivirüs/">ANTİVİRÜS</a>
-          {% for slug,name in breadcrumbs %}
-           <li><a href="/category/{{ slug }}">{{ name }}</a></li>
-           {% endfor %}
+          <a class="nav-link" href="/ssl/antivirus/">ANTİVİRÜS</a>
+        
         </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact/">DESTEK</a>
